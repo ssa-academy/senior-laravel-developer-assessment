@@ -613,7 +613,7 @@ Base the user migration file in the following table:
 ##### ★ Bonus
 
 - **+5 points** - Write a **Unit test** covering the event listener's functionalities
-- **+5 points** - Write a **Feature test** covering the event and event listeners functionalities
+- **+5 points** - Write a **Feature test** covering the event and event listener's functionalities
 
 
 <br>
@@ -625,5 +625,5 @@ Base the user migration file in the following table:
 </p>
 
 <p align="center">
-<small>Prepared for SSA Academy Software and Web Developer Applicants only. Do not reproduce document elsewhere.</small>
+<small>Prepared for SSA Academy Software and Web Developer Applicants only.<br>Do not reproduce document elsewhere.</small>
 </p>
