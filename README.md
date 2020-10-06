@@ -33,8 +33,8 @@ For any questions regarding the exam please send inquiry to <a href="mailto:john
 
 ##### Goals
 
-<div>&emsp;<input type="checkbox">&nbsp;Implement Laravel’s default login feature</div>
-<div>&emsp;<input type="checkbox">&nbsp;Develop User CRUD functionalities</div>
+- [] Implement Laravel’s default login feature
+- [] Develop User CRUD functionalities
 
 <br>
 
@@ -163,9 +163,9 @@ Base the user migration file in the following table:
 
 ##### Goals
 
-<div>&emsp;<input type="checkbox">&nbsp;Implement a Service Pattern for User CRUD</div>
-<div>&emsp;<input type="checkbox">&nbsp;Write Unit testing for the service class</div>
-<div>&emsp;<input type="checkbox">&nbsp;Add Validation rules to the User CRUD</div>
+- [] Implement a Service Pattern for User CRUD
+- [] Write Unit testing for the service class
+- [] Add Validation rules to the User CRUD
 
 <br>
 
@@ -517,9 +517,9 @@ Base the user migration file in the following table:
 
 ##### Goals
 
-<div>&emsp;<input type="checkbox">&nbsp;Generate a table called <code>details</code> to save additional user background information</div>
-<div>&emsp;<input type="checkbox">&nbsp;Implement an event called <code>UserSaved</code> triggered when a user is created or updated</div>
-<div>&emsp;<input type="checkbox">&nbsp;Implement a listener that auto-saves additional user details when the <code>UserSaved</code> event is triggered</div>
+- [] Generate a table called <code>details</code> to save additional user background information
+- [] Implement an event called <code>UserSaved</code> triggered when a user is created or updated
+- [] Implement a listener that auto-saves additional user details when the <code>UserSaved</code> event is triggered
 
 <br>
 
