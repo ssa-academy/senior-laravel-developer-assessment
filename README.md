@@ -618,4 +618,10 @@ Base the user migration file in the following table:
 <hr>
 <br>
 
+<p align="center">
 :four_leaf_clover:  Good luck!
+</p>
+
+<p align="center">
+<small>Prepared for SSA Academy Software and Web Developer Applicants only. Do not reproduce document elsewhere.</small>
+</p>
