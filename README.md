@@ -107,9 +107,12 @@ Base the user migration file in the following table:
 	$user = User::find(1);
 	$user->avatar;
 	```
+	
 	<details>
 		<summary>which returns the photo or a default image</summary>
-		```
+		<p>
+		
+		```php
 		/**
 		 * Retrieve the default photo from storage.
 		 * Supply a base64 png image if the `photo` column is null.
@@ -121,6 +124,8 @@ Base the user migration file in the following table:
 			// Code goes brrrrr.
 		}
 		```
+		
+		</p>
 	</details>
 
 - **+2 points** - Implement a model accessor called `getFullnameAttribute` which can be used as:
