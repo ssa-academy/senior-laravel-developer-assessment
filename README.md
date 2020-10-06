@@ -606,7 +606,7 @@ Base the user migration file in the following table:
 
 ##### ✎ Notes
 
-- The column `details.user_id` must be a foreign key related to `users.id` that cascades on `DELETE` and `UPDATE`
+- The column `details.user_id` must be a foreign key that references `users.id` and cascades on `DELETE` and `UPDATE`
 
 <br>
 
