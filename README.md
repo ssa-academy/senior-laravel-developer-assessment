@@ -33,8 +33,8 @@ For any questions regarding the exam please send inquiry to <a href="mailto:john
 
 ##### Goals
 
-- [] Implement Laravel’s default login feature
-- [] Develop User CRUD functionalities
+- [ ] Implement Laravel’s default login feature
+- [ ] Develop User CRUD functionalities
 
 <br>
 
@@ -163,9 +163,9 @@ Base the user migration file in the following table:
 
 ##### Goals
 
-- [] Implement a Service Pattern for User CRUD
-- [] Write Unit testing for the service class
-- [] Add Validation rules to the User CRUD
+- [ ] Implement a Service Pattern for User CRUD
+- [ ] Write Unit testing for the service class
+- [ ] Add Validation rules to the User CRUD
 
 <br>
 
@@ -517,9 +517,9 @@ Base the user migration file in the following table:
 
 ##### Goals
 
-- [] Generate a table called <code>details</code> to save additional user background information
-- [] Implement an event called <code>UserSaved</code> triggered when a user is created or updated
-- [] Implement a listener that auto-saves additional user details when the <code>UserSaved</code> event is triggered
+- [ ] Generate a table called <code>details</code> to save additional user background information
+- [ ] Implement an event called <code>UserSaved</code> triggered when a user is created or updated
+- [ ] Implement a listener that auto-saves additional user details when the <code>UserSaved</code> event is triggered
 
 <br>
 
