@@ -9,17 +9,12 @@ This assessment is designed to test an examinee’s knowledge of PHP Design prin
 **Assessment Point System**: The assessment total is 120 points with additional 32 bonus points.
 Passing grade is 100. See breakdown below for more detail.
 
-```
-+---------+--------+------ +-------+
 | Levels  | Points | Bonus | Total |
-+---------+--------+------ +-------+
+| ------- | -----: | ----: | ----: |
 | Level 1 |     45 |    12 |    57 |
 | Level 2 |     45 |    10 |    55 |
 | Level 3 |     30 |    10 |    40 |
-+---------+--------+-------+-------+
 |   TOTAL |    120 |    32 |   152 |
-+---------+--------+-------+-------+
-```
 
 **Asessment Duration**: Examinee is given 3 days to complete the assessment. On a separate spreadsheet, please log the time spent per functionality (start time and end time).
 For any questions regarding the exam please send inquiry to <a href="mailto:john@ssagroup.com">john@ssagroup.com</a> or HR.
@@ -45,6 +40,7 @@ For any questions regarding the exam please send inquiry to <a href="mailto:john
 Base the user migration file in the following table:
 
 ```mysql
+mysql> show columns from users;
 +-------------------+-----------------+------+-----+---------+----------------+
 | Field             | Type            | Null | Key | Default | Extra          |
 +-------------------+-----------------+------+-----+---------+----------------+
