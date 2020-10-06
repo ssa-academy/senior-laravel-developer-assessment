@@ -1,4 +1,6 @@
-# Assessment for Senior Laravel Developer
+<h1 align="center">
+Assessment for Senior Laravel Developer
+</h1>
 
 <br>
 
