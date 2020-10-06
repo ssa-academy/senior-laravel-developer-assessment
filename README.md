@@ -133,7 +133,7 @@ Base the user migration file in the following table:
 	<details>
 	<summary>which returns the first, middle initial, and last name of the user</summary>
 	
-	```
+	```php
 	/**
 	 * Retrieve the user's full name in the format:
 	 *  [firstname][ mi?][ lastname]
