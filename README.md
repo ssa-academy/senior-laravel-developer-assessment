@@ -109,23 +109,20 @@ Base the user migration file in the following table:
 	```
 	
 	<details>
-		<summary>which returns the photo or a default image</summary>
-		<p>
-		
-		```php
-		/**
-		 * Retrieve the default photo from storage.
-		 * Supply a base64 png image if the `photo` column is null.
-		 *
-		 * @return string
-		 */
-		public function getAvatarAttribute(): string
-		{
-			// Code goes brrrrr.
-		}
-		```
-		
-		</p>
+	<summary>which returns the photo or a default image</summary>
+	
+	```php
+	/**
+	 * Retrieve the default photo from storage.
+	 * Supply a base64 png image if the `photo` column is null.
+	 *
+	 * @return string
+	 */
+	public function getAvatarAttribute(): string
+	{
+		// Code goes brrrr.
+	}
+	```
 	</details>
 
 - **+2 points** - Implement a model accessor called `getFullnameAttribute` which can be used as:
@@ -134,21 +131,22 @@ Base the user migration file in the following table:
 	$user->fullname; // E.g. Juan P. dela Cruz
 	```
 	<details>
-		<summary>which returns the first, middle initial, and last name of the user</summary>
-		```
-		/**
-		 * Retrieve the user's full name in the format:
-		 *  [firstname][ mi?][ lastname]
-		 * Where:
-		 *  [ mi?] is the optional middle initial.
-		 *
-		 * @return string
-		 */
-		public function getFullnameAttribute(): string
-		{
-			// Code goes brrrrr.
-		}
-		```
+	<summary>which returns the first, middle initial, and last name of the user</summary>
+	
+	```
+	/**
+	 * Retrieve the user's full name in the format:
+	 *  [firstname][ mi?][ lastname]
+	 * Where:
+	 *  [ mi?] is the optional middle initial.
+	 *
+	 * @return string
+	 */
+	public function getFullnameAttribute(): string
+	{
+		// Code goes brrrrr.
+	}
+	```
 	</details>
 
 - **+2 points** - Implement a model accessor called `getMiddleinitialAttribute` which can be used as:
@@ -185,250 +183,252 @@ Base the user migration file in the following table:
 
 1. Create a unit test file in `/tests/Unit/Services/UserServiceTest.php`
 	<details>
- 		<summary>Sample UserServiceTest.php</summary>
-		```php
+ 	<summary>Sample UserServiceTest.php</summary>
+	
+	```php
 
-		namespace Tests\Unit\Services;
+	namespace Tests\Unit\Services;
 
-		use Illuminate\Foundation\Testing\DatabaseMigrations;
-		use Illuminate\Foundation\Testing\RefreshDatabase;
-		use Illuminate\Foundation\Testing\WithFaker;
-		use Tests\TestCase;
+	use Illuminate\Foundation\Testing\DatabaseMigrations;
+	use Illuminate\Foundation\Testing\RefreshDatabase;
+	use Illuminate\Foundation\Testing\WithFaker;
+	use Tests\TestCase;
 
-		/**
-		 * @runTestsInSeparateProcesses
-		 * @preserveGlobalState disabled
-		 */
-		class UserServiceTest extends TestCase
-		{
-		    use DatabaseMigrations, RefreshDatabase, WithFaker;
+	/**
+	 * @runTestsInSeparateProcesses
+	 * @preserveGlobalState disabled
+	 */
+	class UserServiceTest extends TestCase
+	{
+	    use DatabaseMigrations, RefreshDatabase, WithFaker;
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_return_a_paginated_list_of_users()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_return_a_paginated_list_of_users()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_store_a_user_to_database()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_store_a_user_to_database()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_find_and_return_an_existing_user()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_find_and_return_an_existing_user()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_update_an_existing_user()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_update_an_existing_user()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_soft_delete_an_existing_user()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_soft_delete_an_existing_user()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_return_a_paginated_list_of_trashed_users()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_return_a_paginated_list_of_trashed_users()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_restore_a_soft_deleted_user()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_restore_a_soft_deleted_user()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_permanently_delete_a_soft_deleted_user()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_permanently_delete_a_soft_deleted_user()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
+		// Assertions
+	    }
 
-		    /**
-		     * @test
-		     * @return void
-		     */
-		    public function it_can_upload_photo()
-		    {
-		        // Arrangements
+	    /**
+	     * @test
+	     * @return void
+	     */
+	    public function it_can_upload_photo()
+	    {
+		// Arrangements
 
-		        // Actions
+		// Actions
 
-		        // Assertions
-		    }
-		}
+		// Assertions
+	    }
+	}
 
-		```
+	```
 	</details>
 1. Create a file `/app/Services/UserService.php`
 	<details>
-		<summary>Sample UserService.php</summary>
-		```php
+	<summary>Sample UserService.php</summary>
+	
+	```php
 
-		namespace User\Services;
+	namespace User\Services;
 
-		use App\User;
-		use Illuminate\Http\Request;
+	use App\User;
+	use Illuminate\Http\Request;
 
-		class UserService implements UserServiceInterface
-		{
+	class UserService implements UserServiceInterface
+	{
+	    /**
+	     * The model instance.
+	     *
+	     * @var App\User
+	     */
+	    protected $model;
+
+	    /**
+	     * The request instance.
+	     *
+	     * @var \Illuminate\Http\Request
+	     */
+	    protected $request;
+
+	    /**
+	     * Constructor to bind model to a repository.
+	     *
+	     * @param \App\User                $model
+	     * @param \Illuminate\Http\Request $request
+	     */
+	    public function __construct(User $model, Request $request)
+	    {
+		$this->model = $model;
+		$this->request = $request;
+	    }
+
+	    /**
+	     * Define the validation rules for the model.
+	     *
+	     * @return array
+	     */
+	    public function rules()
+	    {
+		return [
 		    /**
-		     * The model instance.
+		     * Rule syntax:
+		     *  'column' => 'validation1|validation2'
 		     *
-		     * @var App\User
-		     */
-		    protected $model;
-
-		    /**
-		     * The request instance.
+		     *  or
 		     *
-		     * @var \Illuminate\Http\Request
+		     *  'column' => ['validation1', function1()]
 		     */
-		    protected $request;
+		    'firstname' => 'required',
+		];
+	    }
 
-		    /**
-		     * Constructor to bind model to a repository.
-		     *
-		     * @param \App\User                $model
-		     * @param \Illuminate\Http\Request $request
-		     */
-		    public function __construct(User $model, Request $request)
-		    {
-		        $this->model = $model;
-		        $this->request = $request;
-		    }
+	    /**
+	     * Create model resource.
+	     *
+	     * @param  array $attributes
+	     * @return \Illuminate\Database\Eloquent\Model
+	     */
+	    public function store(array $attributes)
+	    {
+		// Code goes brrrr.
+	    }
 
-		    /**
-		     * Define the validation rules for the model.
-		     *
-		     * @return array
-		     */
-		    public function rules()
-		    {
-		        return [
-		            /**
-		             * Rule syntax:
-		             *  'column' => 'validation1|validation2'
-		             *
-		             *  or
-		             *
-		             *  'column' => ['validation1', function1()]
-		             */
-		            'firstname' => 'required',
-		        ];
-		    }
+	    /**
+	     * Update model resource.
+	     *
+	     * @param  integer $id
+	     * @param  array   $attributes
+	     * @return boolean
+	     */
+	    public function update(int $id, array $attributes): bool
+	    {
+		// Code goes brrrr.
+	    }
 
-		    /**
-		     * Create model resource.
-		     *
-		     * @param  array $attributes
-		     * @return \Illuminate\Database\Eloquent\Model
-		     */
-		    public function store(array $attributes)
-		    {
-		        // Code goes brrrr.
-		    }
+	    /**
+	     * Generate random hash key.
+	     *
+	     * @param  string $key
+	     * @return string
+	     */
+	    public function hash(string $key): string
+	    {
+		// Code goes brrrr.
+	    }
 
-		    /**
-		     * Update model resource.
-		     *
-		     * @param  integer $id
-		     * @param  array   $attributes
-		     * @return boolean
-		     */
-		    public function update(int $id, array $attributes): bool
-		    {
-		        // Code goes brrrr.
-		    }
-
-		    /**
-		     * Generate random hash key.
-		     *
-		     * @param  string $key
-		     * @return string
-		     */
-		    public function hash(string $key): string
-		    {
-		        // Code goes brrrr.
-		    }
-
-		    /**
-		     * Upload the given file.
-		     *
-		     * @param  \Illuminate\Http\UploadedFile $file
-		     * @return string|null
-		     */
-		    public function upload(UploadedFile $file)
-		    {
-		        // Code goes brrrr.
-		    }
-		}
+	    /**
+	     * Upload the given file.
+	     *
+	     * @param  \Illuminate\Http\UploadedFile $file
+	     * @return string|null
+	     */
+	    public function upload(UploadedFile $file)
+	    {
+		// Code goes brrrr.
+	    }
+	}
 
 
-		```
+	```
 	</details>
 1. Create an Interface class file `/app/Services/UserServiceInterface.php`
 	1. The Interface must have a public method called `hash(string $password): string`, which should be used when saving the password field.
@@ -453,42 +453,43 @@ Base the user migration file in the following table:
 1. Add validation rules to the `UserService@rules`.
 1. Create a `Request` class file `/app/Http/Requests/UserRequest.php`, and add the rules.
 	<details>
-		<summary>See sample `UserRequest.php`</summary>
-		```php
+	<summary>See sample `UserRequest.php`</summary>
+	
+	```php
 
-		namespace App\Http\Requests;
+	namespace App\Http\Requests;
 
-		use Illuminate\Foundation\Http\FormRequest;
-		use App\Services\UserServiceInterface;
+	use Illuminate\Foundation\Http\FormRequest;
+	use App\Services\UserServiceInterface;
 
-		class UserRequest extends FormRequest
-		{
-		    /**
-		     * Determine if the user is authorized
-		     * to make this request.
-		     *
-		     * @return boolean
-		     */
-		    public function authorize()
-		    {
-		        return true;
-		    }
+	class UserRequest extends FormRequest
+	{
+	    /**
+	     * Determine if the user is authorized
+	     * to make this request.
+	     *
+	     * @return boolean
+	     */
+	    public function authorize()
+	    {
+		return true;
+	    }
 
-		    /**
-		     * Get the validation rules that apply to the request.
-		     *
-		     * @return array
-		     */
-		    public function rules()
-		    {
-		        return $this->container->make(
-		            UserServiceInterface::class
-		        )->rules();
-		    }
-		}
+	    /**
+	     * Get the validation rules that apply to the request.
+	     *
+	     * @return array
+	     */
+	    public function rules()
+	    {
+		return $this->container->make(
+		    UserServiceInterface::class
+		)->rules();
+	    }
+	}
 
 
-		```
+	```
 	</details>
 1. Use the `UserRequest` class as the first parameter to `UserController@store` and `UserController@update`.
 	```php
@@ -566,35 +567,37 @@ Base the user migration file in the following table:
 		1. The user's avatar based on a given `photo`
 		1. The user's gender based on the value of `prefixname`.
 		<details>
-			<summary>Example data:</summary>
-			```php
-			for a user with attributes of:
-			{
-				id: 1,
-				prefixname: 'Mr.',
-				firstname: 'Juan',
-				middlename: 'Palito',
-				lastname: 'dela Cruz',
-				suffixname: 'Jr.',
-				username: 'juantwothree',
-				email: 'juan@demo.ph',
-				photo: null,
-				type: 'user',
-			}
+		<summary>Example data:</summary>
+		
+		```php
+		for a user with attributes of:
+		{
+			id: 1,
+			prefixname: 'Mr.',
+			firstname: 'Juan',
+			middlename: 'Palito',
+			lastname: 'dela Cruz',
+			suffixname: 'Jr.',
+			username: 'juantwothree',
+			email: 'juan@demo.ph',
+			photo: null,
+			type: 'user',
+		}
+		```
+		
+		The saved data should be:
 
-			The saved data should be:
-
-			mysql> select `id`,`key`,`value`,`type`,`user_id` from details;
-			+----+-----------------+-------------------+--------+---------+
-			| id | key             | value             | type   | user_id |
-			+----+-----------------+-------------------+--------+---------+
-			|  1 | Full name       | Juan P. dela Cruz | bio    |       1 |
-			|  2 | Middle Initial  | P.                | bio    |       1 |
-			|  3 | Avatar          | http://localho... | bio    |       1 |
-			|  4 | Gender          | Male              | bio    |       1 |
-			+----+-----------------+-------------------+--------+---------+
-			```
-
+		```mysql
+		mysql> select `id`,`key`,`value`,`type`,`user_id` from details;
+		+----+-----------------+-------------------+--------+---------+
+		| id | key             | value             | type   | user_id |
+		+----+-----------------+-------------------+--------+---------+
+		|  1 | Full name       | Juan P. dela Cruz | bio    |       1 |
+		|  2 | Middle Initial  | P.                | bio    |       1 |
+		|  3 | Avatar          | http://localho... | bio    |       1 |
+		|  4 | Gender          | Male              | bio    |       1 |
+		+----+-----------------+-------------------+--------+---------+
+		```
 		</details>
 
 <br>
