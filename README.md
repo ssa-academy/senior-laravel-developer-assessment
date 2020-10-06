@@ -612,3 +612,10 @@ Base the user migration file in the following table:
 
 - **+5 points** - Write a **Unit test** covering the event listener's functionalities
 - **+5 points** - Write a **Feature test** covering the event and event listeners functionalities
+
+
+<br>
+<hr>
+<br>
+
+:four_leaf_clover:  Good luck!
