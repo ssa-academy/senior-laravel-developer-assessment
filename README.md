@@ -37,6 +37,7 @@ For any questions regarding the exam please send inquiry to <a href="mailto:john
 <div>&emsp;<input type="checkbox">&nbsp;Develop User CRUD functionalities</div>
 
 <br>
+
 ##### Prerequisites
 
 Base the user migration file in the following table:
@@ -65,6 +66,7 @@ Base the user migration file in the following table:
 ```
 
 <br>
+
 ##### Instructions
 
 1. Start a project in Laravel 7 or higher
@@ -78,12 +80,14 @@ Base the user migration file in the following table:
 1. Add a button to permanently delete a soft deleted user (users.delete).
 
 <br>
+
 ##### ✎ Notes
 - All users routes must implement the `auth` middleware.
 - The value for `prefixname` should only be one in `[Mr, Mrs, Ms]`.
 - Use `enctype=multipart/form-data` attribute on the `forms` to enable uploading of user photo.
 
 <br>
+
 ##### ★ Bonus
 
 - **+5 points** - Write and register a route macro for soft deletes, which can be used as:
@@ -164,12 +168,14 @@ Base the user migration file in the following table:
 <div>&emsp;<input type="checkbox">&nbsp;Add Validation rules to the User CRUD</div>
 
 <br>
+
 ##### Prerequisites
 
 - [Level 1](#Level-1) must be fully accomplished
 - [phpunit/phpunit](https://packagist.org/packages/phpunit/phpunit) package must be installed
 
 <br>
+
 ##### Instructions
 
 1. Create a unit test file in `/tests/Unit/Services/UserServiceTest.php`
@@ -487,6 +493,7 @@ Base the user migration file in the following table:
 	```
 
 <br>
+
 ##### ✎ Notes
 
 - You may add more test cases to cover more methods if desired.
@@ -494,6 +501,7 @@ Base the user migration file in the following table:
 - Use your best judgment in declaring the validation rules for the fields.
 
 <br>
+
 ##### ★ Bonus
 
 - **+5 points** - Write a **Feature test** covering the `UserController` functionalities
@@ -514,11 +522,13 @@ Base the user migration file in the following table:
 <div>&emsp;<input type="checkbox">&nbsp;Implement a listener that auto-saves additional user details when the <code>UserSaved</code> event is triggered</div>
 
 <br>
+
 ##### Prerequisites
 
 - [Level 2](#Level-2) must be fully accomplished
 
 <br>
+
 ##### Instructions
 
 1. Create a migration file for a table called `details`. Use the following table for reference on the columns:
@@ -583,11 +593,13 @@ Base the user migration file in the following table:
 		</details>
 
 <br>
+
 ##### ✎ Notes
 
 - The column `details.user_id` must have a foreign key related to `users.id` that cascades on `DELETE` and `UPDATE`
 
 <br>
+
 ##### ★ Bonus
 
 - **+5 points** - Write a **Unit test** covering the event listener's functionalities
