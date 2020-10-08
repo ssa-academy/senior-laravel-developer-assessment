@@ -105,10 +105,10 @@ mysql> show columns from users;
 	$user = User::find(1);
 	$user->avatar;
 	```
-	
+
 	<details>
 	<summary>which returns the photo or a default image</summary>
-	
+
 	```php
 	/**
 	 * Retrieve the default photo from storage.
@@ -130,7 +130,7 @@ mysql> show columns from users;
 	```
 	<details>
 	<summary>which returns the first, middle initial, and last name of the user</summary>
-	
+
 	```php
 	/**
 	 * Retrieve the user's full name in the format:
@@ -182,7 +182,7 @@ mysql> show columns from users;
 1. Create a unit test file in `/tests/Unit/Services/UserServiceTest.php`
 	<details>
  	<summary>Sample UserServiceTest.php</summary>
-	
+
 	```php
 
 	namespace Tests\Unit\Services;
@@ -323,179 +323,198 @@ mysql> show columns from users;
 1. Create a file `/app/Services/UserService.php`
 	<details>
 	<summary>Sample UserService.php</summary>
-	
+
 	```php
 
-        namespace User\Services;
+    namespace User\Services;
 
-        use App\User;
-        use Illuminate\Http\Request;
-        use Illuminate\Http\UploadedFile;
-        use Illuminate\Pagination\LengthAwarePaginator;
+    use App\User;
+    use Illuminate\Http\Request;
+    use Illuminate\Http\UploadedFile;
+    use Illuminate\Pagination\LengthAwarePaginator;
 
-        class UserService implements UserServiceInterface
+    class UserService implements UserServiceInterface
+    {
+        /**
+         * The model instance.
+         *
+         * @var App\User
+         */
+        protected $model;
+
+        /**
+         * The request instance.
+         *
+         * @var \Illuminate\Http\Request
+         */
+        protected $request;
+
+        /**
+         * Constructor to bind model to a repository.
+         *
+         * @param \App\User                $model
+         * @param \Illuminate\Http\Request $request
+         */
+        public function __construct(User $model, Request $request)
         {
-            /**
-             * The model instance.
-             *
-             * @var App\User
-             */
-            protected $model;
-
-            /**
-             * The request instance.
-             *
-             * @var \Illuminate\Http\Request
-             */
-            protected $request;
-
-            /**
-             * Constructor to bind model to a repository.
-             *
-             * @param \App\User                $model
-             * @param \Illuminate\Http\Request $request
-             */
-            public function __construct(User $model, Request $request)
-            {
-                $this->model = $model;
-                $this->request = $request;
-            }
-
-            /**
-             * Define the validation rules for the model.
-             *
-             * @return array
-             */
-            public function rules()
-            {
-                return [
-                    /**
-                     * Rule syntax:
-                     *  'column' => 'validation1|validation2'
-                     *
-                     *  or
-                     *
-                     *  'column' => ['validation1', function1()]
-                     */
-                    'firstname' => 'required',
-                ];
-            }
-
-            /**
-             * Retrieve all resources and paginate.
-             *
-             * @return \Illuminate\Pagination\LengthAwarePaginator
-             */
-            public function list()
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Create model resource.
-             *
-             * @param  array $attributes
-             * @return \Illuminate\Database\Eloquent\Model
-             */
-            public function store(array $attributes)
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Retrieve model resource details.
-             * Abort to 404 if not found.
-             *
-             * @param  integer $id
-             * @return \Illuminate\Database\Eloquent\Model|null
-             */
-            public function find(int $id):? Model
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Update model resource.
-             *
-             * @param  integer $id
-             * @param  array   $attributes
-             * @return boolean
-             */
-            public function update(int $id, array $attributes): bool
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Soft delete model resource.
-             *
-             * @param  integer|array $id
-             * @return void
-             */
-            public function destroy($id)
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Include only soft deleted records in the results.
-             *
-             * @return \Illuminate\Pagination\LengthAwarePaginator
-             */
-            public function listTrashed()
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Restore model resource.
-             *
-             * @param  integer|array $id
-             * @return void
-             */
-            public function restore($id)
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Permanently delete model resource.
-             *
-             * @param  integer|array $id
-             * @return void
-             */
-            public function delete($id)
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Generate random hash key.
-             *
-             * @param  string $key
-             * @return string
-             */
-            public function hash(string $key): string
-            {
-                // Code goes brrrr.
-            }
-
-            /**
-             * Upload the given file.
-             *
-             * @param  \Illuminate\Http\UploadedFile $file
-             * @return string|null
-             */
-            public function upload(UploadedFile $file)
-            {
-                // Code goes brrrr.
-            }
+            $this->model = $model;
+            $this->request = $request;
         }
+
+        /**
+         * Define the validation rules for the model.
+         *
+         * @return array
+         */
+        public function rules()
+        {
+            return [
+                /**
+                 * Rule syntax:
+                 *  'column' => 'validation1|validation2'
+                 *
+                 *  or
+                 *
+                 *  'column' => ['validation1', function1()]
+                 */
+                'firstname' => 'required',
+            ];
+        }
+
+        /**
+         * Retrieve all resources and paginate.
+         *
+         * @return \Illuminate\Pagination\LengthAwarePaginator
+         */
+        public function list()
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Create model resource.
+         *
+         * @param  array $attributes
+         * @return \Illuminate\Database\Eloquent\Model
+         */
+        public function store(array $attributes)
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Retrieve model resource details.
+         * Abort to 404 if not found.
+         *
+         * @param  integer $id
+         * @return \Illuminate\Database\Eloquent\Model|null
+         */
+        public function find(int $id):? Model
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Update model resource.
+         *
+         * @param  integer $id
+         * @param  array   $attributes
+         * @return boolean
+         */
+        public function update(int $id, array $attributes): bool
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Soft delete model resource.
+         *
+         * @param  integer|array $id
+         * @return void
+         */
+        public function destroy($id)
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Include only soft deleted records in the results.
+         *
+         * @return \Illuminate\Pagination\LengthAwarePaginator
+         */
+        public function listTrashed()
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Restore model resource.
+         *
+         * @param  integer|array $id
+         * @return void
+         */
+        public function restore($id)
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Permanently delete model resource.
+         *
+         * @param  integer|array $id
+         * @return void
+         */
+        public function delete($id)
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Generate random hash key.
+         *
+         * @param  string $key
+         * @return string
+         */
+        public function hash(string $key): string
+        {
+            // Code goes brrrr.
+        }
+
+        /**
+         * Upload the given file.
+         *
+         * @param  \Illuminate\Http\UploadedFile $file
+         * @return string|null
+         */
+        public function upload(UploadedFile $file)
+        {
+            // Code goes brrrr.
+        }
+    }
 
 	```
 	</details>
 1. Create an Interface class file `/app/Services/UserServiceInterface.php`
 	1. The Interface must have a public method called `hash(string $password): string`, which should be used when saving the password field.
+		<details>
+		<summary>See Sample file</summary>
+
+		```php
+
+		namespace App\Services;
+
+		interface UserServiceInterface
+		{
+		    /**
+		     * Generate random hash key.
+		     *
+		     * @param  string $key
+		     * @return string
+		     */
+		    public function hash(string $key);
+		}
+		```
+		</details>
 1. Build your test cases. See the following test cases for the minimum coverage requirements:
 	```
 	+-------------------------------------------------+---------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -518,7 +537,7 @@ mysql> show columns from users;
 1. Create a `Request` class file `/app/Http/Requests/UserRequest.php`, and add the rules.
 	<details>
 	<summary>See sample `UserRequest.php`</summary>
-	
+
 	```php
 
 	namespace App\Http\Requests;
@@ -572,19 +591,19 @@ mysql> show columns from users;
 - Do not forget to register the bindings for `UserService` and `UserServiceInterface` in the `AppServiceProvider`.
 	<details>
 	<summary>See sample binding code</summary>
-	
+
 	```php
 
-        /**
-         * Register any application services.
-         *
-         * @return void
-         */
-        public function register()
-        {
-            $this->app->bind(UserServiceInterface::class, UserService::class);
-        }
-	
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->bind(UserServiceInterface::class, UserService::class);
+    }
+
 	```
 	</details>
 
@@ -650,7 +669,7 @@ mysql> show columns from users;
 		1. The user's gender based on the value of `prefixname`.
 		<details>
 		<summary>Example data:</summary>
-		
+
 		```php
 		for a user with attributes of:
 		{
@@ -666,7 +685,7 @@ mysql> show columns from users;
 			type: 'user',
 		}
 		```
-		
+
 		The saved data should be:
 
 		```mysql
