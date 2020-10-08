@@ -330,6 +330,7 @@ mysql> show columns from users;
 
         use App\User;
         use Illuminate\Http\Request;
+	use Illuminate\Http\UploadedFile;
         use Illuminate\Pagination\LengthAwarePaginator;
 
         class UserService implements UserServiceInterface
