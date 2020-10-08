@@ -569,6 +569,24 @@ mysql> show columns from users;
 - You may add more test cases to cover more methods if desired.
 - If a method name is not to your liking, you may change it thus.
 - Use your best judgment in declaring the validation rules for the fields.
+- Do not forget to register the bindings for `UserService` and `UserServiceInterface` in the `AppServiceProvider`.
+	<details>
+	<summary>See sample binding code</summary>
+	
+	```php
+
+        /**
+         * Register any application services.
+         *
+         * @return void
+         */
+        public function register()
+        {
+            $this->app->bind(UserServiceInterface::class, UserService::class);
+        }
+	
+	```
+	</details>
 
 <br>
 
