@@ -326,105 +326,170 @@ mysql> show columns from users;
 	
 	```php
 
-	namespace User\Services;
+        namespace User\Services;
 
-	use App\User;
-	use Illuminate\Http\Request;
+        use App\User;
+        use Illuminate\Http\Request;
+        use Illuminate\Pagination\LengthAwarePaginator;
 
-	class UserService implements UserServiceInterface
-	{
-	    /**
-	     * The model instance.
-	     *
-	     * @var App\User
-	     */
-	    protected $model;
+        class UserService implements UserServiceInterface
+        {
+            /**
+             * The model instance.
+             *
+             * @var App\User
+             */
+            protected $model;
 
-	    /**
-	     * The request instance.
-	     *
-	     * @var \Illuminate\Http\Request
-	     */
-	    protected $request;
+            /**
+             * The request instance.
+             *
+             * @var \Illuminate\Http\Request
+             */
+            protected $request;
 
-	    /**
-	     * Constructor to bind model to a repository.
-	     *
-	     * @param \App\User                $model
-	     * @param \Illuminate\Http\Request $request
-	     */
-	    public function __construct(User $model, Request $request)
-	    {
-		$this->model = $model;
-		$this->request = $request;
-	    }
+            /**
+             * Constructor to bind model to a repository.
+             *
+             * @param \App\User                $model
+             * @param \Illuminate\Http\Request $request
+             */
+            public function __construct(User $model, Request $request)
+            {
+                $this->model = $model;
+                $this->request = $request;
+            }
 
-	    /**
-	     * Define the validation rules for the model.
-	     *
-	     * @return array
-	     */
-	    public function rules()
-	    {
-		return [
-		    /**
-		     * Rule syntax:
-		     *  'column' => 'validation1|validation2'
-		     *
-		     *  or
-		     *
-		     *  'column' => ['validation1', function1()]
-		     */
-		    'firstname' => 'required',
-		];
-	    }
+            /**
+             * Define the validation rules for the model.
+             *
+             * @return array
+             */
+            public function rules()
+            {
+                return [
+                    /**
+                     * Rule syntax:
+                     *  'column' => 'validation1|validation2'
+                     *
+                     *  or
+                     *
+                     *  'column' => ['validation1', function1()]
+                     */
+                    'firstname' => 'required',
+                ];
+            }
 
-	    /**
-	     * Create model resource.
-	     *
-	     * @param  array $attributes
-	     * @return \Illuminate\Database\Eloquent\Model
-	     */
-	    public function store(array $attributes)
-	    {
-		// Code goes brrrr.
-	    }
+            /**
+             * Retrieve all resources and paginate.
+             *
+             * @return \Illuminate\Pagination\LengthAwarePaginator
+             */
+            public function list()
+            {
+                // Code goes brrrr.
+            }
 
-	    /**
-	     * Update model resource.
-	     *
-	     * @param  integer $id
-	     * @param  array   $attributes
-	     * @return boolean
-	     */
-	    public function update(int $id, array $attributes): bool
-	    {
-		// Code goes brrrr.
-	    }
+            /**
+             * Create model resource.
+             *
+             * @param  array $attributes
+             * @return \Illuminate\Database\Eloquent\Model
+             */
+            public function store(array $attributes)
+            {
+                // Code goes brrrr.
+            }
 
-	    /**
-	     * Generate random hash key.
-	     *
-	     * @param  string $key
-	     * @return string
-	     */
-	    public function hash(string $key): string
-	    {
-		// Code goes brrrr.
-	    }
+            /**
+             * Retrieve model resource details.
+             * Abort to 404 if not found.
+             *
+             * @param  integer $id
+             * @return \Illuminate\Database\Eloquent\Model|null
+             */
+            public function find(int $id):? Model
+            {
+                // Code goes brrrr.
+            }
 
-	    /**
-	     * Upload the given file.
-	     *
-	     * @param  \Illuminate\Http\UploadedFile $file
-	     * @return string|null
-	     */
-	    public function upload(UploadedFile $file)
-	    {
-		// Code goes brrrr.
-	    }
-	}
+            /**
+             * Update model resource.
+             *
+             * @param  integer $id
+             * @param  array   $attributes
+             * @return boolean
+             */
+            public function update(int $id, array $attributes): bool
+            {
+                // Code goes brrrr.
+            }
 
+            /**
+             * Soft delete model resource.
+             *
+             * @param  integer|array $id
+             * @return void
+             */
+            public function destroy($id)
+            {
+                // Code goes brrrr.
+            }
+
+            /**
+             * Include only soft deleted records in the results.
+             *
+             * @return \Illuminate\Pagination\LengthAwarePaginator
+             */
+            public function listTrashed()
+            {
+                // Code goes brrrr.
+            }
+
+            /**
+             * Restore model resource.
+             *
+             * @param  integer|array $id
+             * @return void
+             */
+            public function restore($id)
+            {
+                // Code goes brrrr.
+            }
+
+            /**
+             * Permanently delete model resource.
+             *
+             * @param  integer|array $id
+             * @return void
+             */
+            public function delete($id)
+            {
+                // Code goes brrrr.
+            }
+
+            /**
+             * Generate random hash key.
+             *
+             * @param  string $key
+             * @return string
+             */
+            public function hash(string $key): string
+            {
+                // Code goes brrrr.
+            }
+
+            /**
+             * Upload the given file.
+             *
+             * @param  \Illuminate\Http\UploadedFile $file
+             * @return string|null
+             */
+            public function upload(UploadedFile $file)
+            {
+                // Code goes brrrr.
+            }
+        }
 
 	```
 	</details>
