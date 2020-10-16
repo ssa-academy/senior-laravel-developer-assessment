@@ -6,15 +6,15 @@ Assessment for Senior Laravel Developer
 
 This assessment is designed to test an examinee’s knowledge of PHP Design principles and its implementations on Laravel framework. It is divided into 3 levels, with each feature having to be accomplished consecutively.
 
-**Assessment Point System**: The assessment total is 120 points with additional 32 bonus points.
+**Assessment Point System**: The assessment total is 125 points with additional 32 bonus points.
 Passing grade is 100. See breakdown below for more detail.
 
 | Levels  | Points | Bonus | Total |
 | ------- | -----: | ----: | ----: |
-| Level 1 |     45 |    12 |    57 |
+| Level 1 |     50 |    12 |    62 |
 | Level 2 |     45 |    10 |    55 |
 | Level 3 |     30 |    10 |    40 |
-|   TOTAL |    120 |    32 |   152 |
+|   TOTAL |    125 |    32 |   157 |
 
 **Asessment Duration**: Examinee is given 3 days to complete the assessment. On a separate spreadsheet, please log the time spent per functionality (start time and end time).
 For any questions regarding the exam please send inquiry to <a href="mailto:john@ssagroup.com">john@ssagroup.com</a> or HR.
@@ -70,6 +70,7 @@ mysql> show columns from users;
 1. Start a project in Laravel 7 or higher
 1. Implement the default login feature using the [laravel/ui](https://packagist.org/packages/laravel/ui) package.
 1. Add a page to list all users (users.index) in a table.
+1. Add a page to display a single user (users.show).
 1. Add a page to display the form to create a new user (users.create).
 1. Add a page to edit a user (users.edit / users.update).
 1. Add a button to delete a user (users.destroy).
