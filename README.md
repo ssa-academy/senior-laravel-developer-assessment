@@ -365,9 +365,10 @@ mysql> show columns from users;
         /**
          * Define the validation rules for the model.
          *
+	 * @param  int $id
          * @return array
          */
-        public function rules()
+        public function rules($id = null)
         {
             return [
                 /**
@@ -568,7 +569,7 @@ mysql> show columns from users;
 	    {
 		return $this->container->make(
 		    UserServiceInterface::class
-		)->rules();
+		)->rules($this->user);
 	    }
 	}
 
