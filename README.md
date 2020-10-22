@@ -365,7 +365,7 @@ mysql> show columns from users;
         /**
          * Define the validation rules for the model.
          *
-	 * @param  int $id
+         * @param  int $id
          * @return array
          */
         public function rules($id = null)
