@@ -67,8 +67,8 @@ mysql> show columns from users;
 
 ##### Instructions
 
-1. Start a project in Laravel 7 or higher
-1. Implement the default login feature using the [laravel/ui](https://packagist.org/packages/laravel/ui) package.
+1. Start a project in Laravel 8 or higher
+1. Implement the default login feature using the laravel starter kits package.
 1. Add a page to list all users (users.index) in a table.
 1. Add a page to display a single user (users.show).
 1. Add a page to display the form to create a new user (users.create).
