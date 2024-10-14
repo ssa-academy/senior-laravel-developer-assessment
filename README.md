@@ -17,7 +17,7 @@ Passing grade is 100. See breakdown below for more detail.
 |   TOTAL |    125 |    32 |   157 |
 
 **Asessment Duration**: Examinee is given 3 days to complete the assessment. On a separate spreadsheet, please log the time spent per functionality (start time and end time).
-For any questions regarding the exam please send inquiry to <a href="mailto:louie@ssagroup.com">louie@ssagroup.com</a> or HR.
+For any questions regarding the exam please send inquiry to <a href="mailto:sandy@ssagroup.com">louie@ssagroup.com</a> or HR.
 
 **Output**: Examinee is expected to send an email with attachment to their output files (preferably a zip file). Alternatively, examinee can attach a link to their GitHub Repository, Google Drive, Dropbox, or any other storage service to download the output if the file is too large to be attached on email, or for other reason.
 
